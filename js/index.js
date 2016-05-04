@@ -5,88 +5,76 @@ $(function(){
     cha.onclick=function(){
         tuBox.style.display="none";
     }
-    //head 下拉框
-    var list=$(".headleft")[0];
-    var sb=$(".songzhi")[0];
-    var border=$(".border")[0];
-    hover(list,function(){
-        sb.style.display="block";
-        border.style.display="block";
-    },function(){
-        sb.style.display="none";
-        border.style.display="none";
-    })
+    //送至：北京
+    var headLeft=$('.headleft')[0];
+    var songZhi=$('.songzhi')[0];
+    headLeft.onmouseover=function(){
+        songZhi.style.display="block";
+    }
+    headLeft.onmouseout=function(){
+        songZhi.style.display="none";
+    }
+    //我的京东
+    var dong=$('.myjingdongbox')[0];
+    var myjd=$('.myjingdong')[0];
+    dong.onmouseover=function(){
+        myjd.style.display="block";
+    }
+    dong.onmouseout=function(){
+        myjd.style.display="none";
+    }
+    //手机京东
+    var phone=$('.phone')[0];
+    var phoneJd=$('.phonejd')[0];
+    phone.onmouseover=function(){
+        phoneJd.style.display="block";
+    }
+    phone.onmouseout=function(){
+        phoneJd.style.display="none";
+    }
+    //关注京东
+    var guan=$('.guan')[0];
+    var guanzhu=$('.guanzhu')[0];
+    guan.onmouseover=function(){
+        guanzhu.style.display="block";
+    }
+    guan.onmouseout=function(){
+        guanzhu.style.display="none";
+    }
+    //客户服务
+    var fuwu=$('.fuwu')[0];
+    var fuwuBox=$('.kehufuwu')[0];
+    fuwu.onmouseover=function(){
+        fuwuBox.style.display="block";
+    }
+    fuwu.onmouseout=function(){
+        fuwuBox.style.display="none";
+    }
+    //网站导航
+    var wz=$('.wz')[0];
+    var wdh=$('.wdh')[0];
+    wz.onmouseover=function(){
+        wdh.style.display="block";
+    }
+    wz.onmouseout=function(){
+        wdh.style.display="none";
+    }
+    //购物车
+    var shopBox=$('.shopcarbox')[0];
+    var car=$('.carxiang')[0];
+    shopBox.onmouseover=function(){
+        car.style.display="block";
+    }
+    shopBox.onmouseout=function(){
+        car.style.display="none";
+    }
 
-    var list2=$(".myjingdongbox")[0];
-    var sb2=$(".myjingdong")[0];
-    var border2=$(".border2")[0];
-    hover(list2,function(){
-        sb2.style.display="block";
-        border2.style.display="block";
-    },function(){
-        sb2.style.display="none";
-        border2.style.display="none";
-    })
 
-    var list2=$(".myjingdongbox")[0];
-    var sb2=$(".myjingdong")[0];
-    var border2=$(".border2")[0];
-    hover(list2,function(){
-        sb2.style.display="block";
-        border2.style.display="block";
-    },function(){
-        sb2.style.display="none";
-        border2.style.display="none";
-    })
 
-    var list3=$(".sjlibox")[0];
-    var sb3=$(".phonejd")[0];
-    var border3=$(".border3")[0];
-    hover(list3,function(){
-        sb3.style.display="block";
-        border3.style.display="block";
-    },function(){
-        sb3.style.display="none";
-        border3.style.display="none";
-    })
 
-    var list4=$(".gzlibox")[0];
-    var sb4=$(".guanzhu")[0];
-    hover(list4,function(){
-        sb4.style.display="block";
-    },function(){
-        sb4.style.display="none";
-    })
 
-    var list5=$(".fuwubox")[0];
-    var sb5=$(".kehufuwu")[0];
-    var border5=$(".border5")[0];
-    hover(list5,function(){
-        sb5.style.display="block";
-        border5.style.display="block";
-    },function(){
-        sb5.style.display="none";
-        border5.style.display="none";
-    })
 
-    var list6=$(".wzbox")[0];
-    var sb6=$(".wdh")[0];
-    var border6=$(".border6")[0];
-    hover(list6,function(){
-        sb6.style.display="block";
-        border6.style.display="block";
-    },function(){
-        sb6.style.display="none";
-        border6.style.display="none";
-    })
 
-    var list7=$(".shopcarbox")[0];
-    var sb7=$(".carxiang")[0];
-    hover(list7,function(){
-        sb7.style.display="block";
-    },function(){
-        sb7.style.display="none";
-    })
  
     //banner轮播图效果
 	var imgs=$('a',$('.bannertubox')[0]);
@@ -405,7 +393,26 @@ window.onscroll=function(){
         }            
     };
  }
-
+//楼层按钮之鼠标移上移下
+// for (var i = 0; i < li.length; i++) {
+//     li[i].index_7=i;
+//     li[i].onmouseover=function(){
+//        for (var j = 0; j < f.length; j++) {
+//            f[j].style.display="block";
+//            fzi[j].style.display="none";
+//        };
+//        f[this.index_7].style.display="none";
+//        fzi[this.index_7].style.display="block";
+//     }
+//     li[i].onmouseout=function(){
+//        for (var j = 0; j < f.length; j++) {
+//            f[j].style.display="block";
+//            fzi[j].style.display="none";
+//        };
+//        f[this.index_7].style.display="block";
+//        fzi[this.index_7].style.display="none";
+//     }
+// };
 
 
 
@@ -430,25 +437,9 @@ sBox.onmouseout=function(){
 }
 
 
-//按需加载
-var floors=$(".fl");
-var arr2=[];
-var ch=document.documentElement.clientHeight;
-for (var i = 0; i < floors.length; i++) {
-    arr2.push(floors[i].offsetTop);
-};
-window.onscroll=function(){
-    var st=document.body.scrollTop||document.documentElement.scrollTop;
-    for (var i = 0; i < floors.length; i++) {
-        if(st+ch-300>arr2[i]){
-            var img3s=$("img",floors[i]);
-            for (var j = 0; j < img3s.length; j++) {
-                img3s[j].src=img3s[j].getAttribute("asrc");
-            };
-        }
-    };
-}
-window.onscroll();
+
+
+
 
 
 
